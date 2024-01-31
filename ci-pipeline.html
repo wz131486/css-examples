@@ -13,8 +13,8 @@
             list-style-type: none;
         }
 
-        .block {
-            width: 200px;
+        .ci-job-block {
+            width:200px;
         }
 
         .pipeline-graph {
@@ -24,7 +24,7 @@
             vertical-align: top;
         }
 
-        .item-box {
+        .ci-job-component {
             position: relative;
             display: inline-block;
             width: 100%;
@@ -35,8 +35,8 @@
             margin-bottom: 10px;
         }
 
-        .item-box::before,
-        .item-box::after {
+        .ci-job-component::before,
+        .ci-job-component::after {
             content: "";
             position: absolute;
             top: 50%;
@@ -45,12 +45,12 @@
             border: 2px solid rgb(183, 176, 176);
         }
 
-        .pipeline-graph ul>li:first-child .item-box::before,
-        .pipeline-graph ul>li:first-child .item-box::after {
+        .pipeline-graph ul>li:first-child .ci-job-component::before,
+        .pipeline-graph ul>li:first-child .ci-job-component::after {
             width: 50px;
         }
 
-        .item-box::before {
+        .ci-job-component::before {
             left: -27px;
             border-radius: 0 0 0 20px;
             border-top: none;
@@ -58,11 +58,11 @@
             transform: translateY(-100%);
         }
 
-        .pipeline-graph ul>li:first-child .item-box::before {
+        .pipeline-graph ul>li:first-child .ci-job-component::before {
             left: -50px;
         }
 
-        .item-box::after {
+        .ci-job-component::after {
             right: -27px;
             border-radius: 0 0 20px 0;
             border-top: none;
@@ -70,16 +70,16 @@
             transform: translateY(-100%);
         }
 
-        .pipeline-graph ul>li:first-child .item-box::after {
+        .pipeline-graph ul>li:first-child .ci-job-component::after {
             right: -50px;
         }
 
-        .pipeline-graph ul>li:nth-child(2) .item-box::before,
-        .pipeline-graph ul>li:nth-child(2) .item-box::after {
+        .pipeline-graph ul>li:nth-child(2) .ci-job-component::before,
+        .pipeline-graph ul>li:nth-child(2) .ci-job-component::after {
             height: 35px;
         }
 
-        .pipeline-graph ul>li:first-child .item-box::before {
+        .pipeline-graph ul>li:first-child .ci-job-component::before {
             border-radius: 0 0 0 0;
             border-top: none;
             border-right: none;
@@ -87,7 +87,7 @@
             transform: translateY(-100%);
         }
 
-        .pipeline-graph ul>li:first-child .item-box::after {
+        .pipeline-graph ul>li:first-child .ci-job-component::after {
             border-radius: 0 0 0 0;
             border-top: none;
             border-right: none;
@@ -95,24 +95,24 @@
             transform: translateY(-100%);
         }
 
-        .pipeline-graph:first-child ul>li .item-box::before {
+        .pipeline-graph:first-child ul>li .ci-job-component::before {
             display: none;
         }
 
-        .pipeline-graph:last-child ul>li .item-box::after {
+        .pipeline-graph:last-child ul>li .ci-job-component::after {
             display: none;
         }
 
-        .item-curve {
+        .curve {
             display: none;
         }
 
-        .pipeline-graph ul>li:nth-child(2) .item-curve {
+        .pipeline-graph ul>li:nth-child(2) .curve {
             position: relative;
             display: block;
         }
 
-        .pipeline-graph ul>li:nth-child(2) .item-curve::before {
+        .pipeline-graph ul>li:nth-child(2) .curve::before {
             content: "";
             position: absolute;
             width: 25px;
@@ -125,7 +125,7 @@
             border-left: none;
         }
 
-        .pipeline-graph ul>li:nth-child(2) .item-curve::after {
+        .pipeline-graph ul>li:nth-child(2) .curve::after {
             content: "";
             position: absolute;
             width: 25px;
@@ -136,14 +136,13 @@
             border-radius: 25px 0 0 0;
             border-bottom: none;
             border-right: none;
-
         }
 
-        .pipeline-graph:last-child ul>li:nth-child(2) .item-curve::after {
+        .pipeline-graph:last-child ul>li:nth-child(2) .curve::after {
             display: none;
         }
 
-        .pipeline-graph:first-child ul>li:nth-child(2) .item-curve::before {
+        .pipeline-graph:first-child ul>li:nth-child(2) .curve::before {
             display: none;
         }
     </style>
@@ -158,15 +157,15 @@
             <div>
                 <ul>
                     <li>
-                        <div class="block">
-                            <div class="item-curve"></div>
-                            <div class="item-box"></div>
+                        <div class="ci-job-block">
+                            <div class="curve"></div>
+                            <div class="ci-job-component"></div>
                         </div>
                     </li>
                     <li>
-                        <div class="block">
-                            <div class="item-curve"></div>
-                            <div class="item-box"></div>
+                        <div class="ci-job-block">
+                            <div class="curve"></div>
+                            <div class="ci-job-component"></div>
                         </div>
                     </li>
                 </ul>
@@ -179,21 +178,21 @@
             <div>
                 <ul>
                     <li>
-                        <div class="block">
-                            <div class="item-curve"></div>
-                            <div class="item-box"></div>
+                        <div class="ci-job-block">
+                            <div class="curve"></div>
+                            <div class="ci-job-component"></div>
                         </div>
                     </li>
                     <li>
-                        <div class="block">
-                            <div class="item-curve"></div>
-                            <div class="item-box"></div>
+                        <div class="ci-job-block">
+                            <div class="curve"></div>
+                            <div class="ci-job-component"></div>
                         </div>
                     </li>
                     <li>
-                        <div class="block">
-                            <div class="item-curve"></div>
-                            <div class="item-box"></div>
+                        <div class="ci-job-block">
+                            <div class="curve"></div>
+                            <div class="ci-job-component"></div>
                         </div>
                     </li>
                 </ul>
@@ -206,9 +205,9 @@
             <div>
                 <ul>
                     <li>
-                        <div class="block">
-                            <div class="item-curve"></div>
-                            <div class="item-box"></div>
+                        <div class="ci-job-block">
+                            <div class="curve"></div>
+                            <div class="ci-job-component"></div>
                         </div>
                     </li>
                 </ul>
