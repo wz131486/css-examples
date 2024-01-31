@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>gitlab-ci pipline样式实现</title>
+    <style>
+        ul {
+            padding-left: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .block {
+            width: 200px;
+        }
+
+        .pipeline-graph {
+            display: inline-block;
+            margin-right: 48px;
+            margin-left: 48px;
+            vertical-align: top;
+        }
+
+        .item-box {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            background-color: beige;
+            border: 1px solid rgb(183, 176, 176);
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .item-box::before,
+        .item-box::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 25px;
+            height: 75px;
+            border: 2px solid rgb(183, 176, 176);
+        }
+
+        .pipeline-graph ul>li:first-child .item-box::before,
+        .pipeline-graph ul>li:first-child .item-box::after {
+            width: 50px;
+        }
+
+        .item-box::before {
+            left: -27px;
+            border-radius: 0 0 0 20px;
+            border-top: none;
+            border-right: none;
+            transform: translateY(-100%);
+        }
+
+        .pipeline-graph ul>li:first-child .item-box::before {
+            left: -50px;
+        }
+
+        .item-box::after {
+            right: -27px;
+            border-radius: 0 0 20px 0;
+            border-top: none;
+            border-left: none;
+            transform: translateY(-100%);
+        }
+
+        .pipeline-graph ul>li:first-child .item-box::after {
+            right: -50px;
+        }
+
+        .pipeline-graph ul>li:nth-child(2) .item-box::before,
+        .pipeline-graph ul>li:nth-child(2) .item-box::after {
+            height: 35px;
+        }
+
+        .pipeline-graph ul>li:first-child .item-box::before {
+            border-radius: 0 0 0 0;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            transform: translateY(-100%);
+        }
+
+        .pipeline-graph ul>li:first-child .item-box::after {
+            border-radius: 0 0 0 0;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            transform: translateY(-100%);
+        }
+
+        .pipeline-graph:first-child ul>li .item-box::before {
+            display: none;
+        }
+
+        .pipeline-graph:last-child ul>li .item-box::after {
+            display: none;
+        }
+
+        .item-curve {
+            display: none;
+        }
+
+        .pipeline-graph ul>li:nth-child(2) .item-curve {
+            position: relative;
+            display: block;
+        }
+
+        .pipeline-graph ul>li:nth-child(2) .item-curve::before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            margin-left: -51px;
+            margin-top: -37px;
+            border: 2px solid rgb(183, 176, 176);
+            border-radius: 0 25px 0 0;
+            border-bottom: none;
+            border-left: none;
+        }
+
+        .pipeline-graph ul>li:nth-child(2) .item-curve::after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            margin-left: calc(100% + 26px);
+            margin-top: -37px;
+            border: 2px solid rgb(183, 176, 176);
+            border-radius: 25px 0 0 0;
+            border-bottom: none;
+            border-right: none;
+
+        }
+
+        .pipeline-graph:last-child ul>li:nth-child(2) .item-curve::after {
+            display: none;
+        }
+
+        .pipeline-graph:first-child ul>li:nth-child(2) .item-curve::before {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="pipeline-graph">
+            <div>
+                <h2>Build</h2>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <div class="block">
+                            <div class="item-curve"></div>
+                            <div class="item-box"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <div class="item-curve"></div>
+                            <div class="item-box"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="pipeline-graph">
+            <div>
+                <h2>Test</h2>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <div class="block">
+                            <div class="item-curve"></div>
+                            <div class="item-box"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <div class="item-curve"></div>
+                            <div class="item-box"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <div class="item-curve"></div>
+                            <div class="item-box"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="pipeline-graph">
+            <div>
+                <h2>Deploy</h2>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <div class="block">
+                            <div class="item-curve"></div>
+                            <div class="item-box"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
